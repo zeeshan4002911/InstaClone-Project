@@ -6,14 +6,14 @@ import Postview from './PostView/postview';
 
 function App() {
   return (
-    <>
+    <div className="wrapper">
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<LandingPage/>}/>
           <Route path='/postview' element={<Postview/>} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
