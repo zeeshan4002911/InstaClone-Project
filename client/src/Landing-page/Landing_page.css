@@ -1,6 +1,6 @@
 .two-part {
     height: 100vh;
-    width: 50vw;
+    width: 45vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .rt {
-    float: right;   
+    float: right;
 }
 
 .rt>button {
@@ -36,4 +36,22 @@
 .rt>h1 {
     color: #6b5b75;
     text-shadow: 5px 5px 5px #9d92ff;
+}
+
+@media screen and (max-width: 600px) {
+    .two-part {
+        padding-top: 10vh;
+        width: 100vw;
+        height: auto;
+    }
+    
+    .two-part>img {
+        border-radius: 25%;
+        width: 90vw;
+    }
+
+    .rt {
+        text-align: center;
+        margin: 0 auto;
+    }
 }

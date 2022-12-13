@@ -24,6 +24,18 @@
 .form-container button {
     display: block;
     margin: auto;
-    padding: .3rem;
+    padding: .3rem 1.5rem;
     background-color: rgb(67, 145, 209);
+    border-radius: 5px;
+}
+
+.form-container button:active {
+    background-color: rgb(27, 105, 189);
+}
+
+@media screen and (max-width: 600px) {
+    .form-container {
+        width: 70vw;
+        margin: 20vh 10vw;
+    }
 }
