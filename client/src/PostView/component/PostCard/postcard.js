@@ -2,6 +2,7 @@ import React from 'react';
 import "./postcard.css"
 
 export default function Card({ data }) {
+    data.date = new Date(data.date).toLocaleDateString();
     return (
         <div className='card'>
             <img className='icon right' srcSet="./Icons/option.png" alt="triple-dot" />

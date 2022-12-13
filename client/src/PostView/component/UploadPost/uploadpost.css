@@ -1,0 +1,29 @@
+.form-container {
+    display: flex;
+    width: 30vw;
+    margin: 20vh 33vw;
+    padding: 20px;
+    border: 1px solid gray;
+    text-align: center;
+
+}
+
+.form-container input[type=file] {
+    width: 90%;
+    border: 1px solid gray;
+}
+
+.form-container input[id=description] {
+    width: 90%;
+}
+
+.form-container input {
+    margin: 20px;
+}
+
+.form-container button {
+    display: block;
+    margin: auto;
+    padding: .3rem;
+    background-color: rgb(67, 145, 209);
+}
