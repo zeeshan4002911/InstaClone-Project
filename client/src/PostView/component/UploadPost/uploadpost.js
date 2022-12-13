@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./uploadpost.css";
-const API_KEY = process.env.API_URL || "http://localhost:3001";
+const API_KEY = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 
 export default function UploadPost() {

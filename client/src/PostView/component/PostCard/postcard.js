@@ -1,6 +1,6 @@
 import React from 'react';
 import "./postcard.css";
-const API_KEY = process.env.API_URL || "http://localhost:3001";
+const API_KEY = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 export default function Card({ data }) {
     data.date = new Date(data.date).toLocaleDateString();

@@ -3,7 +3,7 @@ import "./postview.css"
 import Card from './component/PostCard/postcard';
 import { useNavigate } from 'react-router-dom';
 
-const API_KEY = process.env.API_URL || "http://localhost:3001";
+const API_KEY = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 export default function Postview() {
     const [data, setdata] = useState([]);
