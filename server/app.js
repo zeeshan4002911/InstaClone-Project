@@ -14,9 +14,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+app.use(express.static('public'));
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, 'uploads'))
+        cb(null, path.join(__dirname, 'public/uploads'))
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
@@ -25,19 +27,6 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({ storage: storage })
-
-app.get("/uploads/:id", (req, res) => {
-    try {
-        const picture = path.join(__dirname, "./uploads", req.params.id);
-        fs.readFileSync(picture);
-        res.sendFile(picture);
-    } catch (err) {
-        res.status(404).json({
-            status: "Error",
-            message: err.message,
-        });
-    }
-});
 
 app.get("/", (req, res) => {
     res.json({

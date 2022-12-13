@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./uploadpost.css";
-const API_KEY = process.env.API_URL || "http://localhost:3001/post";
+const API_KEY = process.env.API_URL || "http://localhost:3001";
 
 
 export default function UploadPost() {
@@ -22,7 +22,7 @@ export default function UploadPost() {
             const file = event.target.elements.PostImage.files[0];
             formData.append("PostImage", file);
 
-            await fetch(API_KEY, {
+            await fetch(API_KEY + '/post', {
                 method: "POST",
                 body: formData,
             }).then((res) => res.json())
@@ -40,7 +40,7 @@ export default function UploadPost() {
     };
     return (
         <div className="form-container">
-            <form action={API_KEY} encType='multipart/form-data' method="post" onSubmit={handleSubmit}>
+            <form action={API_KEY + '/post'} encType='multipart/form-data' method="post" onSubmit={handleSubmit}>
                 <input type="file" name="image" id="PostImage" required />
                 <input type="text" id="name" placeholder="Author" required />
                 <input type="text" id="location" placeholder="location" required />
